@@ -1,0 +1,20 @@
+@if(errorMessage) {
+    <div>
+    <p>{{ errorMessage }}</p>
+    </div>
+}
+
+@if(messages.length > 0) {
+    <div>
+    <h2>Messages</h2>
+    <ul>
+    @for(message of messages; track message.body) {
+        <li>
+        <p>{{ message.body }}</p>
+        </li>
+    } @empty {
+        <p>There are no messages to show</p>
+    }
+    </ul>
+    </div>
+}
